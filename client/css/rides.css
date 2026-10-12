@@ -1,0 +1,184 @@
+.ride-feed {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 960px) {
+  .ride-feed {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ride-card {
+  background: var(--surface-white);
+  border: 1px solid var(--surface-subtle);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ride-card.is-highlight {
+  border-color: var(--primary);
+}
+
+.host-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.host-copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.host-copy h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.vehicle-line,
+.date-line {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.date-line {
+  font-size: 12px;
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  column-gap: 10px;
+  row-gap: 4px;
+  align-items: start;
+}
+
+.tl-mark {
+  width: 12px;
+  height: 12px;
+  margin-top: 3px;
+  justify-self: center;
+}
+
+.tl-mark.origin {
+  border: 2px solid var(--primary);
+  border-radius: 999px;
+  background: #fff;
+}
+
+.tl-arrow {
+  color: var(--primary);
+  font-size: 16px;
+  line-height: 1;
+  justify-self: center;
+}
+
+.tl-place {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tl-time {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.passenger-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0 12px;
+}
+
+.passenger {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+}
+
+dialog.sheet-dialog {
+  border: 0;
+  padding: 0;
+  width: min(520px, calc(100% - 24px));
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  color: var(--text-dark);
+}
+
+dialog.sheet-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.dialog-body {
+  padding: 22px 20px 20px;
+  max-height: min(86vh, 760px);
+  overflow: auto;
+}
+
+.dialog-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.dialog-head h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.close-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--surface-subtle);
+  font-size: 20px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.status-line {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  dialog.sheet-dialog {
+    width: 100%;
+    margin: auto 0 0;
+    border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+    max-height: 92vh;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toolbar .btn {
+    width: 100%;
+  }
+}
