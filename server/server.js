@@ -227,7 +227,10 @@ export async function start() {
   const server = http.createServer(app);
   attachWebSocket(server, app.locals.hub);
   const port = Number(process.env.PORT || 3000);
-  await new Promise((resolve) => server.listen(port, '0.0.0.0', resolve));
+  await new Promise((resolve, reject) => {
+    server.listen({ port, host: '::', ipv6Only: false }, resolve);
+    server.once('error', reject);
+  });
   console.log(JSON.stringify({
     event_type: 'SERVER_LISTEN',
     port,
